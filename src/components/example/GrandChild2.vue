@@ -18,7 +18,7 @@ export default {
 <style>
 .grand-child2 {
   width: 45%;
-  height: 150px;
+  height: 180px;
   border: 5px solid rgb(148, 80, 80);
 }
 </style>

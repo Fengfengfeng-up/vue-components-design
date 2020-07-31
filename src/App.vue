@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Ancestor></Ancestor>
+    <!-- <Ancestor></Ancestor> -->
+    <FForm></FForm>
   </div>
 </template>
 
 <script>
-import Ancestor from "./components/example/Ancestor.vue";
-
+// import Ancestor from "./components/example/Ancestor.vue";
+import FForm from './components/form_design/Index'
 export default {
   name: "App",
   components: {
-    Ancestor,
+    // Ancestor,
+    FForm
   },
 };
 </script>

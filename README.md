@@ -112,6 +112,54 @@ this.$bus.$on('foo', handle)
 + vuex：创建唯一的全局数据管理者store，通过它管理数据并通知组件状态变更
 
 
+### 插槽
++ 匿名插槽
+```
+// compo1
+<div>
+  <slot></slot>
+</div>
+
+// parent
+<Compo1>hello</Compo1>
+```
++ 具名插槽
+将内容分发到子组件指定位置
+```
+// compo2
+<div>
+  <slot></slot>
+  <slot name="content"></slot>
+</div>
+
+// parent
+<Compo2>
+  <!-- 默认插槽使用default作为参数 -->
+  <template v-slot:default>具名插槽</template>
+  <!-- 具名插槽用插槽名作为参数 -->
+  <template v-slot:content>内容...</template>
+</Compo2>
+```
++ 作用域插槽
+父组件要用到子组件中的数据
+```
+// compo3
+<div>
+  <slot :foo="foo"></slot>
+  <slot name="content" :content="content">
+</div>
+
+// parent
+<Compo3>
+  <!-- 把v-slot的值指定为作用域上下文对象 -->
+  <template v-slot:default="slotProps">
+    来自子组件数据：{{slotProps.foo}}
+  </template>
+  <template v-slot:content="{content}">
+    来自子组件数据：{{content}}
+  </template>
+</Compo3>
+```
 
 
 

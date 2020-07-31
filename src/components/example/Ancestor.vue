@@ -66,6 +66,10 @@ export default {
     travalle() {
       return "明天带孙子去旅游";
     },
+    callGrandGrandChild1() {
+      console.log('收到祖孙的电话');
+      
+    }
   },
   mounted() {
     console.log(this.$children);
