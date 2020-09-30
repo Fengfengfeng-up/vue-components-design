@@ -10,7 +10,7 @@
 
 <script>
 import Schema from "async-validator";
-import emitter from "@/utils/emitter";
+import emitter from "@/mixins/emitter";
 export default {
   name: "FormItem",
   componentName: "FormItem",

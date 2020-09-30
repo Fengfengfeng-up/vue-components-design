@@ -1,4 +1,4 @@
-import NoticeTemplate from "./index.vue";
+import NoticeTemplate from "./Notice.vue";
 import notice from "./notice";
 
 export default {

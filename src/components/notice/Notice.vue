@@ -28,16 +28,23 @@ export default {
   methods: {
     show() {
       this.isShow = true;
-      setTimeout(this.hide, this.duration);
+      this.createTimer(this.hide, this.duration);
     },
     hide() {
       this.isShow = false;
       this.remove();
     },
+    createTimer(cb, delay) {
+      let timer = setTimeout(cb, delay);
+      this.$once("hook:beforeDestroy", () => {
+        console.log("clearTimeout: ", cb);
+        clearTimeout(timer);
+      });
+    },
   },
   mounted() {
-    this.show()
-  }
+    this.show();
+  },
 };
 </script>
 <style>

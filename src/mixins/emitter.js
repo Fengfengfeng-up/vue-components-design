@@ -9,12 +9,13 @@ function broadcast(componentName, eventName, params) {
     }
   });
 }
+
 export default {
   methods: {
     // 针对特定组件向上派发自定义事件
     dispatch(componentName, eventName, params) {
       var parent = this.$parent || this.$root;
-      var name = parent.$options.componentName || parent.$options.name;
+      var name = parent.$options.componentName || parent.$options.name; // componentName 是自定义的名字
       while (parent && (!name || name !== componentName)) {
         parent = parent.$parent;
 
